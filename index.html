@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mask {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .alert {
+            border-radius: 5px;
+            width: 300px;
+            position: absolute;
+            left: 50%;
+            margin-top: 200px;
+            margin-left: -150px;
+            background: #fff;
+        }
+
+        .header {
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .body {
+            padding: 20px 10px;
+        }
+
+        .footer {
+            overflow: hidden;
+            border-top: 1px solid #ccc;
+        }
+
+        .btn {
+            float: left;
+            width: 49%;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .left {
+            border-right: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="btn">显示</button>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/alert.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $.alert({
+                    title: "超级提示",
+                    message: "你确认删除吗？",
+                    ok: {
+                        onPress: function () {
+                            alert("您点击了确认");
+                        }
+                    },
+                    cancel: {
+                        onPress: function () {
+                            alert("您点击了取消");
+                        }
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>
