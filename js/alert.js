@@ -12,7 +12,7 @@
         '</div>' +
         '</div>';
 
-    function EAlert(opts) {
+    function EAlert() {
         this.settings = {
             title: "提示",
             body: "",
@@ -25,7 +25,6 @@
                 onPress: function () { }
             }
         };
-        $.extend(this.settings, opts);
     }
 
     //把弹出框对象渲染到页面上
@@ -66,11 +65,15 @@
         $("#" + id).remove();
     }
 
+
+
     $.extend({
         alert: function (params) {
             new EAlert().show(params);
         }
     });
 
+
+    
 
 })(window, jQuery)
